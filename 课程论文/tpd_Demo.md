@@ -91,13 +91,21 @@
 
 ​	我们主要通过设计一套可以自启动的有限状态机。整个有限状态机的流程如下：
 
-![大作业绘图](assets\大作业绘图.png)
+<div align=center>
+		<img src="assets\大作业绘图.png" />    
+</div>
+
+
 
 ​	从上图我们可以看出，我们采用了回环控制。在任务的开始和结束保证机器人的状态一致，其中包括位姿一致与算法状态一致。也就是在每一次执行任务之前保证机器人都处在同一个状态（也就是开启有图导航和语音伺服的状态)
 
 ​	其控制部分的主要代码在`set_goal.cpp`中，其核心代码见附录：**(这个可以转换为节点关系图)**
 
-​		![set_goal](assets\set_goal.png)
+<div align=center>
+		<img src="assets\set_goal.png" />    
+</div>
+
+​	
 
 ​	上图中我们可以看出，我们主要采用了语音信号控制结合状态信号控制双向控制的方式，保证在不需要语音的时刻能阻塞语音节点，提高控制系统的鲁棒性。
 
@@ -113,9 +121,11 @@
 
 ​	移动机器人的自定位过程是一个非线性化的过程，从统计的角度看， SLAM 问题是一个滤波问题，在系统噪声和测量噪声服从正态分布的情况下EKF 可以很好地去除系统中的噪声干扰实现最优估计，因此Smith和Cheeseman 提出使用EKF 来估计SLAM 问题的EKF － SLAM算法，该算法流程框图如图1。
 
-​	![1558287185995](assets\1558287185995.png)
+<div align=center>
+		<img src="assets\1558287185995.png" />  
+</div>
 
-​                                                         图1 EKF － SLAM 算法流程
+​                           图1 EKF － SLAM 算法流程
 
 ​	扩展卡尔曼滤波算法是一种常用的非线性滤波方法，其原理是在预测点$x_{k|k-1}$将系统状态方程和测量方程进行泰勒展开，并忽略所有非线性展开高阶项来实现对非线性方程的线性化近似回。常用的非线性离散随机系统模型如下：
 $$
@@ -156,11 +166,15 @@ $$
 
 ​	下面是我们不加入ekf直接用gmapping算法构建的地图
 
-![1558541611696](assets\1558541611696.png)
+<div align=center>
+		<img src="assets\1558541611696.png" />  
+</div>
 
 ​	可以看出其效果较差，下面是我们加入EKF滤波之后结合gmapping实现的同一环境下建图效果:
 
-​	![1558716395599](assets\1558716395599.png)
+<div align=center>
+		<img src="assets\1558716395599.png" />  
+</div>
 
 ​	从上图我们可以发现加入EKF算法之后的slam建图效果得到了明显改善，基本上能实现回环建图,最后能建图能封闭。
 
@@ -183,7 +197,9 @@ transformStamped = tfBuffer.lookupTransform("map", "base_link",
 
 ​	其主要与amcl的消息传递图如下：
 
-![amcl](assets\amcl.png)
+<div align=center>
+		<img src="assets\amcl.png" />  
+</div>
 
 ​	其中主要通过发布名为`"initialpose"`的话题信息，通过原来锁存的位姿信息恢复机器人的位姿状态，最终可以提高amcl导航定位的成功率。
 
@@ -203,7 +219,9 @@ allow_unknown: true
 
 ​	move_base的主要框架如下：
 
-![attachment:overview_tf.png](assets\overview_tf_small.png)
+<div align=center>
+		<img src="assets\overview_tf_small.png" />  
+</div>
 
 ​	在ros的导航中，一般我们采用键盘控制结合gmapping进行slam与建图，通过map_server存储我们建立的地图，然后开启amcl利用已经构建完成的地图进行进一步的导航。我们希望导航的时候能够实时的更新地图，而且保留原有的地图不受破坏，便于二次使用。但是如果我们直接开启gmapping，更新的地图会将原来的地图清空，从而无法实现原地图保留的功能。所以我们设计了利用amcl与map_server的有图导航和利用gmapping和move_base的无图导航，同时构建起两个状态之间转换的桥梁,实现有图导航和无图导航的平滑切换，最终可以实现fare_well所要求的二次伺服的效果。
 
@@ -217,7 +235,9 @@ allow_unknown: true
 
 ​	为了实现如下流程:
 
-![1](assets\1.png)
+<div align=center>
+<img src="assets\1.png"/>    
+</div>
 
 ​	完成状态切换，我们设计了动态状态切换算法具体实现方法如下:
 
@@ -237,11 +257,17 @@ system("gnome-terminal -x bash -c 'roslaunch fare_well gmapping_demo.launch' ");
 
 ##### 切换前RVIZ状态
 
-![1558800130820](assets/1558800130820.png)
+<div align=center>
+<img src="assets/1558800153662.png"/>    
+</div>
 
 ##### 切换后RVIZ状态
 
-![1558800153662](assets/1558800153662.png)
+<div align=center>
+<img src="assets/1558800153662.png"/>    
+</div>
+
+
 
 ## 	语音
 
@@ -261,7 +287,9 @@ system("gnome-terminal -x bash -c 'roslaunch fare_well gmapping_demo.launch' ");
 
 ​	为了减少计算机在语音控制时的计算压力，提高机器人系统的实时性与避免错误语音控制和噪声对于控制系统的干扰，我们通过改编科大讯飞语音API实现了语音识别的自动化开启与关闭,其控制关系如下：
 
-![1558718177874](assets\1558718177874.png)
+<div align=center>
+<img src="assets\1558718177874.png"/>    
+</div>
 
 ​	从上图我们可以看出我们通过/open_voice节点控制/sound_node（科大讯飞API修改后的节点）开启与关闭语音识别。其主要实现方式如下
 
