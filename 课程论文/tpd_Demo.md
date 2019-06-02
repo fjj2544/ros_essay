@@ -56,7 +56,7 @@ $Stage\quad 4$: Robotic arm grabbing, autonomous navigation, speech recognition.
 
 ## $Task\ implementation\ process$
 
-![基本流程](assets/基本流程-1559502643842.jpg)
+![基本流程](assets/1559502643842.jpg)
 
 # $Robot\ hardware\ platform$
 
@@ -277,8 +277,9 @@ And` /sound_node `can send the identified information to our core node.
 ​	We mainly design a set of finite state machines that can be self-starting. The flow of the entire finite state machine is as follows:
 
 <div align=center>
-		<img src="assets\大作业绘图.png" />    
+		<img src="assets\111.png" />    
 </div>
+
 
 
 
