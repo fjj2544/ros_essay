@@ -10,7 +10,7 @@ The paper is described as follows:
 
 Among them, my course paper is `Technical paper.pdf`, which is a paper file in the form of $PDF$.
 
-The `tpd_Demo.md` in the course paper folder is a paper file directly visible on $github$.
+The `Technical paper.md` in the homework folder is a paper file directly visible on $github$.
 
 ## PPT
 
