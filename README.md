@@ -1,14 +1,30 @@
 # ros_essay
 
-The course assignments I handed in were divided into two parts: papers and video presentations.
+The course assignments I handed in were divided into two parts: Paper material and video presentations.
+
+# Paper material
+
+## Paper
 
 The paper is described as follows:
 
-Among them, my course paper is `tpd_Demo.pdf`, which is a paper file in the form of $PDF$.
+Among them, my course paper is `Technical paper.pdf`, which is a paper file in the form of $PDF$.
 
 The `tpd_Demo.md` in the course paper folder is a paper file directly visible on $github$.
 
+## PPT
+
+The PPT file we first showed in the current directory is called `First display material.pptx`.
+
+## Summary of the AI Conference
+
+​	My participation impression file is `Impressions of the World Intelligence Conference.pdf`
+
+# video
+
 The demo video file is described as follows:
+
+## Single servo test
 
 File name: `One test.mp4` 
 
@@ -22,6 +38,12 @@ File name: `Host test status test in one test. mp4`
 
 Content: All execution process of the navigation task
 
+## Multiple servo tests
+
 File name: `Second test.mp4` 
 
 Content: All the processes of performing navigation tasks twice
+
+# Source Code
+
+We have passed the source code to the $github$ of the current account. The name of the resource is called $ROS\_GAME$. The usage method (including simulation and real operation) is placed under the `README` file of the corresponding folder.
