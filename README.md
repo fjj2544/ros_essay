@@ -8,21 +8,29 @@ The course assignments I handed in were divided into two parts: Paper material a
 
 The paper is described as follows:
 
-Among them, my course paper is `Technical paper.pdf`, which is a paper file in the form of $PDF$.
+Among them, my course paper is `Technical paper.pdf`, which is a paper file in the form of $PDF$ in the paper folder.
 
-The `tpd_Demo.md` in the course paper folder is a paper file directly visible on $github$.
+The `Technical paper.md` in the homework folder is a paper file directly visible on $github$.
 
 ## PPT
 
-The PPT file we first showed in the current directory is called `First display material.pptx`.
+The PPT file we first showed in the  ppt&&impression folder is called `First PPT1.pptx`.
+
+The PPT file we first showed in the  ppt&&impression folder  is called `First PPT1.pptx`.
+
+They are in the
+
+
 
 ## Summary of the AI Conference
 
 ​	My participation impression file is `Impressions of the World Intelligence Conference.pdf`
 
+It is in the ppt&&impression folder.
+
 # video
 
-The demo video file is described as follows:
+The demo video file which is in the video folder is described as follows:
 
 ## Single servo test
 
