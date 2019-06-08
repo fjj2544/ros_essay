@@ -44,7 +44,15 @@ Content: All execution of the navigation task in a single operation
 
 File name: `Host test status test in one test. mp4` 
 
-Content: All execution process of the navigation task
+Content: All execution process of the navigation task in screen
+
+File name: `ARM. mp4` 
+
+Content: All execution process of the arm task
+
+File name: `final_video. mp4` 
+
+Content: All execution process of the fare_well task in screen
 
 ## Multiple servo tests
 
