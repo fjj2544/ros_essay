@@ -32,7 +32,7 @@ It is in the ppt&&impression folder.
 
 The demo video file which is in the video folder is described as follows:
 
-## Single servo test
+## Single servo test navigation and speech
 
 File name: `One test.mp4` 
 
@@ -46,19 +46,25 @@ File name: `Host test status test in one test. mp4`
 
 Content: All execution process of the navigation task in screen
 
-File name: `ARM. mp4` 
-
-Content: All execution process of the arm task
-
-File name: `final_video. mp4` 
-
-Content: All execution process of the fare_well task in screen
-
-## Multiple servo tests
+## Multiple servo tests navigation and speech
 
 File name: `Second test.mp4` 
 
 Content: All the processes of performing navigation tasks twice
+
+## FINAL TASK VIDEO
+
+File name: `arm_video_rviz. mp4` 
+
+Content: All execution process of the arm task in screen
+
+File name: `task_video_rviz. mp4` 
+
+Content: All execution process of the fare_well task in screen
+
+File name: `task_video. mp4` 
+
+Content: All execution process of the fare_well task in reality
 
 # Source Code
 
